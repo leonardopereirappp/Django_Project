@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %} HomePage Hashflix {% endblock %}
+
+{% block content %}
+    <header class="min-h-screen bg-black bg-opacity-75 bg-blend-overlay border-gray-600 border-b-8 flex justify-center items-center bg-no-repeat"  style="background-image: url('{% static 'images/background_netflix.jpg' %}');">
+        <!--
+            Comentários:
+                O style foi definido no próprio HTML, mas sim poderia ser definido em outro arquivo
+            Atributos:
+                min-h-screen => seta a altura mínima de um elemento, nesse caso a tela ( min-height: 100vh; )
+                bg-opacity-75 => opacidade do background == 75%
+                bg-blend-overlay => serve para controlar como as imagens de fundo vão se misturar com a sua cor de fundo
+                border-gray-600 => uma borda com a cor cinza e com uma tonalidade de 600 ( consultar a página do tailwind para verificar as cores => 'https://tailwindcss.com/docs/text-color' )
+                border-b-8 => serve para definir uma borda de tamanho 8 para o bottom ( parte de baixo )
+                flex => serve como um container para tornar mais prático
+                justify-center => serve para centralizar os itens inclusos nela
+                items-center => centralizando os itens na vertical
+                bg-no-repeat => não repete múltiplas vezes a imagem de fundo
+
+        -->
+        <div class="z-10 h-full py-32 md:py-0 text-gray-100 text-center flex items-center flex-col">
+            <!--
+                Atributos:
+                    z: cria um 'eixo z' para verificar se vai ficar atrás ou na frente da barra de navegação, é como se aproximasse ou afastasse do monitor
+                    h-full: define a altura como 100% do nosso monitor
+                    py: padding no eixo
+                    Flex-col => basicamente fala pro programa que será um objeto abaixo do outro
+            -->
+            <h1 class="font-semibold text-4xl md:text-5xl w-10/12 md:w-3/4 text-center"> Filmes e séries da Hashtag, tudo em um só lugar. </h1>
+            <!--
+                Atributos:
+                    font-semibold => seta a larguta da fonte para: 'font-weight: 600'
+                    text-4xl => define o tamanho do texto para 4 extra large
+                    md => usado em design responsivo o md tem largura mínima de 768px ( '@media (min-width: 768px) { ... }' )  [ Quando tiver com X pixel, acontece algo ]
+                    w-10/12 => usado para separar a tela em 12 partes e usar 10 dela
+                    text-center => texto centralizado no centro
+            -->
+            <h3 class="text-xl md:text-xl py-5"> Assista onde quiser. Cancele quando quiser. </h3>
+            <h4 class="text-sm md:text-lg pb-3"> Quer começar? Coloque seu e-mail abaixo para acessar. </h4>
+            <div class="w-full flex justify-center">
+                <div class="flex justify-center items-center w-11/12 md:w-10/12">
+                    <form method="post" class="w-6/12 justify-center">
+                        <div class="flex flex-grow items-stretch"> <input style="color:black; padding:10px; margin-left:5px">
+                            <!--
+                                Atributos:
+                                    flex-grow => serve para aproveitar todo espaço vazio e preencher
+                                    items-stretch => esticar itens para preencher o eixo transversal do contêiner
+                            -->
+                            <button class="bg-red-600 font-medium md:font-normal flex justify-center items-center py-2 px-3 md:px-0 rounded-br-sm rounded-tr-sm md:text-2xl" type="submit">
+                                <span>
+                                    Acessar
+                                </span>
+                                <ion-icon name="chevron-forward-outline" class="text-2xl"></ion-icon>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
+        <div class="md:w-1/2 flex flex-col justify-center text-center md:text-left p-5 md:p-10 ">
+            <h2 class="md:text-5xl text-4xl font-semibold mb-4"> Enjoy on your TV. </h2>
+            <h5 class="md:text-xl text-lg"> Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more. </h5>
+        </div>
+        <div class='md:w-1/2 flex justify-center items-center'> <img src="{% static 'images/tv.png' %}" class="w-8/12" alt=""> </div>
+    </section>
+    <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
+        <div class='md:w-1/2 flex justify-center items-center '> <img src="{% static 'images/mobile-0819.jpg' %}" class="w-8/12" alt=""> </div>
+        <div class="md:w-1/2 flex flex-col justify-center text-center md:text-left p-5 md:p-10">
+            <h2 class="md:text-5xl text-4xl font-semibold mb-4"> Download your shows to watch offline. </h2>
+            <h5 class="md:text-xl text-lg"> Save your favorites easily and always have something to watch. </h5>
+        </div>
+    </section>
+    <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
+        <div class="md:w-1/2 flex flex-col justify-center text-center md:text-left p-5 md:p-10">
+            <h2 class="md:text-5xl text-4xl font-semibold mb-4"> Create profiles for kids. </h2>
+            <h5 class="md:text-xl text-lg"> Send kids on adventures with their favorite characters in a space made just for them—free with your membership. </h5>
+        </div>
+        <div class='md:w-1/2 flex justify-center items-center'>
+            <img src="{% static 'images/netflix_kid.png' %}" class="w-8/12" alt=""> </div>
+    </section>
+    <footer class=" px-5 py-10 ">  <ul class="flex justify-between items-center">
+        <!--
+            Comentários:
+                Aqui os 3 itens serão separados de forma equidistante, mantendo a beleza (estética) do site
+            Atributos da classe (e suas devidas explicações):
+                flex => serve como um container para tornar mais prático
+                justify-between => serve para distribuir objetos com a mesma distância
+                items-center => centralizando os itens na vertical
+        -->
+        <li>&copy; Belo Leo (2022) </li> <li> Feito com Python (Django)</li> <li>Com o auxílio da HashTag</li> </ul>
+    </footer>
+
+
+{% endblock %}

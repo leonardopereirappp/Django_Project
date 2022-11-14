@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block titulo %} HomeFilmes HashFlix {% endblock %}
+{% block content %}
+    <h1> Esse é o detalhe do {{ filme }} </h1>
+    <p> {{ filme.descricao }} </p>
+    <img src="{{ filme.thumb.url }}">
+
+    <h2> Episódios </h2>
+    <div>
+        {% for episodio in filme.episodios.all %}
+            <a href="{% url 'filme:mostrar_eps'  episodio.pk %}"> <h1>Episodio {{forloop.counter}}: {{ episodio.titulo }} </h1> </a>  <!-- Forloop.counter => contador do looping, é como o enumerate -->
+        {% endfor %}
+    </div>
+    <div>
+        <br>
+        <hr>
+        <p> Relacionados </p>
+        {% for filme in filmes_relacionados %}
+            <a href="{% url 'filme:detalhesfilme' filme.pk %}"> <h1> {{ filme.titulo }} </h1> </a>  <!-- Forloop.counter => contador do looping, é como o enumerate -->
+        {% endfor %}
+    </div>
+{% endblock %}

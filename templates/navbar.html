@@ -1,0 +1,40 @@
+{% load static %}
+<!--
+    Comentários:
+        Essa estrutura '{% load static %}' serve para importar o static dos nossos materiais/arquivos para colocar no front-end (HTML)
+-->
+<nav class="w-full flex justify-between items-center py-3 px-4 fixed z-50">
+    <!--
+        Comentários: NULL
+        Atributos da classe (e suas devidas explicações):
+            w-full => serve para definir a largura como 100%
+            flex => serve como um container para tornar mais prático
+            justify-between => serve para distribuir objetos com a mesma distância
+            items-center => centralizando os itens na vertical
+            py => padding-y (espaçamento (interno) em y)
+            px => padding-x (espaçamento (interno) em x)
+            z => cria um 'eixo z' para verificar se vai ficar atrás ou na frente da barra de navegação, é como se aproximasse ou afastasse do monitor
+     -->
+    <div class="w-6/12">
+        <!--
+            Comentários:
+                No Tailwind, existe uma divisão de 12 partes, a mesma coisa que o grid do bootstrap (col-12)
+            Atributos da classe:
+                w-6/12 => divide a largura (width) das 12 partes, de 6 em 6.
+        -->
+        <a href="/"> <img class="w-2/12" src="{% static 'images/hashflix.png' %}" alt="Hashflix-logo"/> </a>
+    </div>
+    <div class="w-6/12 flex flex-nowrap justify-end">
+        <!--
+            Comentários: NULL
+            Atributos da classe:
+                flex-nowrap => serve para deixar os todos os itens lado a lado, e não embaixo um do outro
+                justify-end => serve para colocar os itens todos no final da página (lado direito)
+                mr => serve para dar uma margem ao lado direito margin-right
+                rounded-md => fazer a borda do botão ficar redonda (margin-radius)
+        -->
+        <div class="mr-2"> <form> <input type="text" class="py-1 px-2 rounded-md text-black" placeholder="Pesquisar..."/> </form> </div>
+        <div class="mr-2"> <a href="#"> <button class="bg-red-600 text-white py-1 px-3 rounded-md"> Fazer login </button> </a> </div>
+        <div class="mr-2"> <a href="#"> <button class="bg-red-600 text-white py-1 px-3 rounded-md"> Editar Perfil </button> </a> </div>
+    </div>
+</nav>

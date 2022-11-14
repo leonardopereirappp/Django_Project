@@ -1,0 +1,11 @@
+Vamos colocar todas as ideias de páginas aqui e depois passaremos para o código, pois a teoria é fundamental para criação de um site
+
+* Teremos:
+ -> Uma StartPage [Onde o usuário irá inserir um email [se tiver cadastro => LoginPage; se_não => CreateAccountPage]]
+ -> Uma HomePage [Filmes já vistos]
+ -> Uma LoginPage [Usuário e autenticação] [Editar o perfil[Trocar senhas, nomes, email]]
+ -> Uma CreateAccountPage [Usuário e autenticação]
+ -> Filmes/séries [episódios[videos, titulo], quantidade_views, data_criação, thumb, titulo, descrição, categoria]
+ -> Barra de pesquisa [Facilitar o processo de busca por cursos]
+
+

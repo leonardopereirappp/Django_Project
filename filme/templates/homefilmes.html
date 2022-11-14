@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block titulo %} HomeFilmes HashFlix {% endblock %}
+{% block content %}
+    <div class="py-10">
+        <h1> Essa é a nossa HomeFilmes </h1>
+        {% for filme in lista_filmes %}
+            <hr>
+            <a href="{% url 'filme:detalhesfilme' filme.id %}">
+                <p> {{ filme }} </p>
+            </a>
+            <p> {{ filme.descricao }} </p>
+            <a href = "{% url 'filme:detalhesfilme' filme.id %}">
+                <!--
+                    Comentários:
+                        * Para isso funcionar, tu deve passar um terceiro valor no urls.py (do app e do projeto inicial)
+                        * O {% url 'filme:detalhesfilme' filme.id %} é associar o link do 'filme/urls.py' com o id do filme, que é passado como parâmetro
+                -->
+                <img src="{{ filme.thumb.url }}">
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

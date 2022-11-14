@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block titulo %} HomeFilmes HashFlix {% endblock %}
+{% block content %}
+
+<iframe src="{{episodio.video}}" title="Episodio: {{ episodio.titulo }}" class="video"> </iframe>
+<style>
+    .video{
+        height: 100vh;
+        width: 198vh;
+        padding-top: 60px;
+        padding-left: 5px;
+    }
+</style>
+{% endblock %}
