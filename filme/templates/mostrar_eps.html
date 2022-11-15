@@ -3,12 +3,23 @@
 {% block content %}
 
 <iframe src="{{episodio.video}}" title="Episodio: {{ episodio.titulo }}" class="video"> </iframe>
+<div class="w-12/12 flex flex-nowrap justify-center">
+    <div class="mr-7 px-5"> <h1 class="title"> {{episodio.titulo}} </h1> </div>
+    <div class="mr-1 px-5"> Visualizações: {{episodio.visualizacoes_ep}} </div>
+    <div class="mr-5 px-5"> <a href="/filmes/filme={{episodio.filme.id}}"><button class="button bg-red-600 text-white px-3 rounded-md"> Voltar ao {{episodio.filme.titulo}} </button> </a> </div>
+</div>
 <style>
     .video{
-        height: 100vh;
-        width: 198vh;
-        padding-top: 60px;
+        height: 93vh;
         padding-left: 5px;
+        width: 185vh;
+        padding-top: 60px;
+    }
+    .title{
+        font-size:12px;
+    }
+    .button{
+        margin-top: 2%
     }
 </style>
 {% endblock %}

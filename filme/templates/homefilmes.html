@@ -19,4 +19,24 @@
             </a>
         {% endfor %}
     </div>
+
+<div class="py-10">
+    <h2> Novo </h2>
+    <br>
+    {% for filme in lista_filmes_recentes %}
+        {{ filme }}
+        <br>
+    {% endfor %}
+</div>
+
+
+
+<div class="py-10">
+    <h2> Em Alta </h2>
+    <br>
+    {% for filme in lista_filmes_em_alta %}
+        {{ filme }}
+        <br>
+    {% endfor %}
+</div>
 {% endblock %}

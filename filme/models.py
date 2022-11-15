@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils import timezone
-from mptt.models import TreeForeignKey
 
 # Create your models here.
 # Aqui se cria as tabelas do banco de dados
@@ -30,9 +29,12 @@ class Episodio(models.Model):
     filme = models.ForeignKey(to="Filme", related_name="episodios", on_delete=models.CASCADE)  #  Aqui é a chave estrangeira do model Filme
     titulo = models.CharField(max_length=100)
     video = models.URLField()
+    num_ep = models.IntegerField(default=0)
+    visualizacoes_ep = models.IntegerField(default=0)
 
     def __str__(self):  # Só pra não ficar um Episodio.object no database
-        return self.titulo
+        return f"{self.filme.titulo} (Ep. {self.num_ep}) - {self.titulo}"
+
 
 
 
